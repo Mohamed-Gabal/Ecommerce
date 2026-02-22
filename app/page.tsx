@@ -2,8 +2,9 @@ import { categoryItems } from "./data/data";
 import Image from "next/image";
 import { allProducts } from "./data/data";
 import ProductCard from "./components/ProductCard";
+import Link from "next/link";
 
-const Page = () => {
+const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
@@ -29,7 +30,7 @@ const Page = () => {
         <div className="container grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {categoryItems.map((item) => (
             <div
-              className="bg-white border border-amber-100 block hover:bg-amber-50 rounded-xl px-10 py-8 transition cursor-pointer"
+              className="bg-white border border-amber-100 block md:hover:bg-amber-50 active:bg-amber-100 rounded-xl px-10 py-8 transition cursor-pointer"
               key={item.id}
             >
               {/* Title and Quantity */}
@@ -53,20 +54,36 @@ const Page = () => {
       </section>
 
       {/* PRODUCTS */}
-      <section className="">
+      <section className="pt-28">
         <div className="container">
           {/* TITLE */}
-          <h2 className="section-title ">Explore All Products</h2>
+          <h2 className="section-title text-center">Explore All Products</h2>
 
           {/* Card Wrapper */}
-          <div className="">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {allProducts.map((product) => (
-              <ProductCard key={product.id} {...product}/>
+              <ProductCard key={product.id} {...product} />
             ))}
           </div>
+
+          {/* Btn */}
+          <Link
+            href="/shop"
+            className="btn-primary block mt-14 mx-auto max-w-max"
+          >
+            View all products
+          </Link>
+        </div>
+      </section>
+
+      {/* Testimonails */}
+      <section className="">
+        <div className="container">
+          {/* Title */}
+          <h2 className="section-title">What Our Clients Say</h2>
         </div>
       </section>
     </>
   );
 };
-export default Page;
+export default Home;
