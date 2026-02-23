@@ -1,8 +1,9 @@
-import { categoryItems } from "./data/data";
+import { categoryItems, testimonials } from "./data/data";
 import Image from "next/image";
 import { allProducts } from "./data/data";
 import ProductCard from "./components/ProductCard";
 import Link from "next/link";
+import { RiDoubleQuotesL } from "@remixicon/react";
 
 const Home = () => {
   return (
@@ -77,10 +78,48 @@ const Home = () => {
       </section>
 
       {/* Testimonails */}
-      <section className="">
+      <section className="py-28">
         <div className="container">
           {/* Title */}
-          <h2 className="section-title">What Our Clients Say</h2>
+          <h2 className="section-title text-center">What Our Clients Say</h2>
+
+          {/* Wrapper */}
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-11 lg:mt-14">
+            {testimonials.map((testimonial) => (
+              // Card
+              <div
+                className="bg-white rounded-xl p-8 flex flex-col items-center"
+                key={testimonial.id}
+              >
+                <span className="text-amber-600 mb-3">
+                  <RiDoubleQuotesL />
+                </span>
+                <p className="text-gray-600 mb-6 italic">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+
+                {/* Author info */}
+                <div className="flex flex-col items-center mt-auto">
+                  {/* IMG */}
+                  <div className="size-16">
+                    <Image
+                      src={testimonial.img}
+                      alt={testimonial.name}
+                      width={150}
+                      height={150}
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="mt-3 text-center">
+                    <h3>{testimonial.name}</h3>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

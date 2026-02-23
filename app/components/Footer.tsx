@@ -1,8 +1,86 @@
-import React from 'react';
+import React from "react";
+import { footerList } from "../data/data";
+import Link from "next/link";
+import {
+  RiFacebookFill,
+  RiInstagramLine,
+  RiTwitterXLine,
+} from "@remixicon/react";
 
 const Footer = () => {
   return (
-    <div className=''>Footer</div>
+    <footer className="bg-neutral-950 text-white pt-10 pb-6">
+      <div className="container space-y-6 divide-y divide-neutral-800">
+        {/* Footer Top */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pb-11 sm:pb-16">
+          {/* Desc */}
+          <div>
+            {/* Logo */}
+            <span className="text-2xl font-cunia inline-flex mb-4">
+              FurniHub
+            </span>
+            <p className="text-gray-300">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
+              laudantium in facilis assumenda?{" "}
+            </p>
+          </div>
+
+          {/* Footer List */}
+          {footerList.map((item) => (
+            <div key={item.id}>
+              <p className="text-xl font-cunia">{item.title}</p>
+
+              {/* Nav Links */}
+              <ul className="space-y-2 mt-4">
+                {item.links.map((link) => (
+                  <li key={link}>
+                    <a href={""} className="text-gray-300 hover:underline">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Get in Touch */}
+          <div>
+            <p className="text-xl font-cunia mb-3">Get in touch</p>
+            <p>
+              Email:{" "}
+              <a href="" className="text-gray-300 hover:underline">
+                abogabal672@gmail.com
+              </a>
+            </p>
+
+            <p>
+              Phone:{" "}
+              <a href="" className="text-gray-300 hover:underline">
+                +20 1001 0349 41
+              </a>
+            </p>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-2 mt-7">
+              {[RiFacebookFill, RiInstagramLine, RiTwitterXLine].map(
+                (Icon, index) => (
+                  <a
+                    href="https://www.facebook.com/share/1N4rNFNApE/"
+                    key={index}
+                    className="text-gray-300 hover:underline hover:text-amber-500 focus:text-amber-500 transition-colors"
+                  >
+                    <Icon />
+                  </a>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <p className="">&copy; Furnihub.All rights reserved.</p>
+      </div>
+    </footer>
   );
-}
+};
 export default Footer;

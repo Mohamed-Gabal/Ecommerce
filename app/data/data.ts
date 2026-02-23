@@ -146,3 +146,50 @@ export const allProducts = [
     desc: "A sleek and compact nightstand with a smooth drawer and top shelf — perfect for lamps, books, or essentials.",
   },
 ];
+
+// Testimonials
+export const testimonials = [
+  {
+    id: 1,
+    name: "Lisa Williams",
+    role: "Homeowner",
+    img: "/Testi.jpg",
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum minus debitis asperiores rerum!",
+  },
+  {
+    id: 2,
+    name: "David Johnson",
+    role: "Interior Designer",
+    img: "/Testi2.jpg",
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum minus debitis asperiores rerum!",
+  },
+  {
+    id: 3,
+    name: "Emily Brown",
+    role: "Architect",
+    img: "/Testi3.jpg",
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum minus debitis asperiores rerum!",
+  },
+];
+
+// Footer List
+export const footerList = [
+  {
+    id: 1,
+    title: "Quick links",
+    links: ["Home", "Shop", "About Us", "Contact"],
+  },
+  {
+    id: 2,
+    title: "Customer Care",
+    links: [
+      "FAQs",
+      "Shipping & Returns",
+      "Privacy Policy",
+      "Terms & Conditions",
+    ],
+  },
+];
