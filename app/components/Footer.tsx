@@ -21,7 +21,7 @@ const Footer = () => {
             </span>
             <p className="text-gray-300">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
-              laudantium in facilis assumenda?{" "}
+              laudantium in facilis assumenda?
             </p>
           </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <p className="text-xl font-cunia mb-3">Get in touch</p>
             <p>
-              Email:{" "}
+              Email:
               <a href="" className="text-gray-300 hover:underline">
                 abogabal672@gmail.com
               </a>
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <p className="">&copy; Furnihub.All rights reserved.</p>
+        <p>&copy; Furnihub.All rights reserved.</p>
       </div>
     </footer>
   );

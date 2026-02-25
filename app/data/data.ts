@@ -193,3 +193,31 @@ export const footerList = [
     ],
   },
 ];
+
+// Product Features
+export const productFeatures = [
+  {
+    id: 1,
+    icon: RiTruckLine,
+    title: "Free Shipping",
+    text: "On orders over $100",
+  },
+  {
+    id: 2,
+    icon: RiShieldCheckLine,
+    title: "2 Year Warranty",
+    text: "Quality guarantee",
+  },
+  {
+    id: 3,
+    icon: RiRefreshLine,
+    title: "Easy Returns",
+    text: "30-day return policy",
+  },
+  {
+    id: 4,
+    icon: RiCustomerService2Line,
+    title: "24/7 Support",
+    text: "Expert assistance",
+  },
+];
