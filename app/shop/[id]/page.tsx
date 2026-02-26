@@ -1,6 +1,6 @@
 "use client";
 
-import { productFeatures } from "@/app/data/data";
+import { allProducts, productFeatures } from "@/app/data/data";
 import {
   RiArrowLeftLine,
   RiShoppingCart2Line,
@@ -11,11 +11,18 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const ProductDetails = () => {
-
   const params = useParams();
-  console.log(params);
   const productId = parseInt(params.id as string);
-  console.log(productId);
+
+  const product = allProducts.find((p) => p.id === productId);
+
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-2xl">Product Not Found</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -53,7 +60,7 @@ const ProductDetails = () => {
 
           {/* Back Btn */}
           <Link
-            href={""}
+            href={"/shop"}
             className="text-amber-600 hover:text-amber-700 inline-flex items-center gap-2 mb-8 font-medium focus:text-amber-700 transition-colors"
           >
             <RiArrowLeftLine />
@@ -64,17 +71,23 @@ const ProductDetails = () => {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Product Image */}
             <div className="aspect-auto rounded-2xl overflow-hidden p-5">
-              <Image src={'/product-1.avif'} alt="" width={600} height={600} className="w-full h-full object-contain"/>
+              <Image
+                src={product?.img}
+                alt={product?.name}
+                width={600}
+                height={600}
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* Product Details */}
             <div className="space-y-4">
               {/* Category */}
               <p className="text-sm text-amber-600 font-medium">
-                {"Product Category"}
+                {product?.category}
               </p>
               {/* Title */}
-              <h3 className="text-2xl text-gray-800">{"Product.name"}</h3>
+              <h3 className="text-2xl text-gray-800">{product?.name}</h3>
               {/* Rating */}
               <div className="flex items-center gap-3">
                 <div className="flex items-center text-amber-500">
@@ -82,15 +95,15 @@ const ProductDetails = () => {
                     <RiStarFill key={i} />
                   ))}
                 </div>
-                <p>{"Product.star"}. 127 Reviews</p>
+                <p>{product?.star}. 127 Reviews</p>
               </div>
 
               {/* Price */}
               <p className="text-2xl font-bold font-cunia text-amber-600">
-                ${"Product.price"}
+                ${product?.price}
               </p>
               {/* Description */}
-              <p>{"Product.desc"}</p>
+              <p>{product?.desc}</p>
 
               {/* Add To Cart */}
               <button className="btn-primary flex items-center gap-1">
