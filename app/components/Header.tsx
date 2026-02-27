@@ -51,7 +51,9 @@ const Header = () => {
               </span>
             </Link>
             {/*LOG IN BTN  */}
-            <button className="btn-primary">Log In</button>
+            <Link href={"/login"} className="btn-primary">
+              Log In
+            </Link>
           </div>
         </nav>
 
@@ -95,9 +97,13 @@ const Header = () => {
               ))}
             </ul>
             {/* Log in */}
-            <button className="btn-primary w-full" onClick={handleClick}>
+            <Link
+              href={"/login"}
+              className="btn-primary w-full text-center block"
+              onClick={handleClick}
+            >
               Log In
-            </button>
+            </Link>
           </div>
         </nav>
       </div>

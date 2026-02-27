@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { RiAddLine, RiDeleteBin6Fill, RiSubtractLine } from "@remixicon/react";
+import Link from "next/link";
 
 const CartItems = () => {
   return (
@@ -72,7 +73,9 @@ const CartItems = () => {
                     <tr>
                       {["Product", "Price", "Quantity", "Total"].map(
                         (label) => (
-                          <th key={label} className="p-4 font-semibold">{label}</th>
+                          <th key={label} className="p-4 font-semibold">
+                            {label}
+                          </th>
                         ),
                       )}
                       <th className="p-4"></th>
@@ -110,7 +113,9 @@ const CartItems = () => {
                         </div>
                       </td>
                       {/* Total Price */}
-                      <td className="text-amber-600 p-4 font-semibold">${1200}</td>
+                      <td className="text-amber-600 p-4 font-semibold">
+                        ${1200}
+                      </td>
                       {/* Trash Icon */}
                       <td className="p-4">
                         <button
@@ -125,9 +130,49 @@ const CartItems = () => {
                 </table>
               </div>
             </div>
+
+            {/* Clear Cart Btn */}
+            <button className="mt-4 text-red-500 flex items-center gap-2 hover:text-red-700 focus:text-red-700 transition-colors">
+              <RiDeleteBin6Fill size={18} />
+              Clear cart
+            </button>
           </div>
+
           {/* Order Summary */}
-          <div className="">Order Summary</div>
+          <div className="lg-col-span-1 border border-gray-200 bg-white p-6 rounded-lg sticky top-24">
+            {/* Title */}
+            <h3 className="text-xl mb-6">Order Summary</h3>
+            <div className="space-y-3 mb-6">
+              {/* Total */}
+              <div className="flex justify-between text-gray-600">
+                <h4>Subtotal:</h4>
+                <p>${500}</p>
+              </div>
+              {/* Shopping */}
+              <div className="flex justify-between text-gray-600">
+                <h4>Shipping:</h4>
+                <p className="text-amber-600">{"free"}</p>
+              </div>
+              {/* Tax */}
+              <div className="flex justify-between text-gray-600">
+                <h4>Tax:</h4>
+                <p>${500}</p>
+              </div>
+            </div>
+
+            {/* Total price */}
+            <div className="border-t border-gray-200 pt-4 mb-6">
+              <h4>Total:</h4>
+              <p>${500}</p>
+            </div>
+
+            {/* Checkout Btn */}
+            <button className="btn-primary w-full">Check out</button>
+
+            {/* Link */}
+            <Link href='/shop' className="block mt-4 text-amber-600 hover:underline focus:underline max-w-max">Continue Shopping</Link>
+
+          </div>
         </div>
       </div>
     </section>
