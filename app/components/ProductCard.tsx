@@ -9,7 +9,13 @@ const ProductCard = ({ id, img, price, name, star }: ProductCardProps) => {
     <div className="bg-white p-8 rounded-md flex flex-col relative group gap-2.5">
       {/* Image */}
       <div className="py-10 relative flex items-center justify-center h-full rounded-xl">
-        <Image src={img} alt={name} width={200} height={200} className="" />
+        <Image
+          src={img}
+          alt={name}
+          width={200}
+          height={200}
+          className="w-auto h-auto object-contain"
+        />
 
         {/* Btn */}
         <Link
